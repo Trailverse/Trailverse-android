@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_explore"
+        android:title="경로탐색"
+        android:icon="@drawable/outline_alt_route_24"/>
+    <item
+        android:id="@+id/nav_start"
+        android:title="등산시작"
+        android:icon="@drawable/baseline_hiking_24"/>
+    <item
+        android:id="@+id/nav_ranking"
+        android:title="랭킹"
+        android:icon="@drawable/ic_ranking" />
+
+    <item
+        android:id="@+id/nav_mypage"
+        android:title="마이페이지"
+        android:icon="@drawable/rounded_article_person_24"/>
+</menu>

@@ -16,4 +16,9 @@ public class ApiClient {
         }
         return retrofit;
     }
+
+    // ✅ 추가: ApiService 반환용 메서드
+    public static ApiService getApiService() {
+        return getClient().create(ApiService.class);
+    }
 }

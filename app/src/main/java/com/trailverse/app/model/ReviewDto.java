@@ -4,6 +4,7 @@ public class ReviewDto {
     private Long reviewId;
     private Long routeId;
     private String userId;
+    private String routeName;
     private String reviewText;
 
     public Long getReviewId() {
@@ -16,6 +17,10 @@ public class ReviewDto {
 
     public String getUserId() {
         return userId;
+    }
+
+    public String getRouteName() {
+        return routeName;
     }
 
     public String getReviewText() {

@@ -1,5 +1,6 @@
 package com.trailverse.app.network;
 
+import com.trailverse.app.model.HikingSessionRequestDto;
 import com.trailverse.app.model.LoginRequest;
 import com.trailverse.app.model.ReviewDto;
 import com.trailverse.app.model.UserDto;
@@ -16,7 +17,10 @@ public interface ApiService {
     @POST("/trailvers/login")
     Call<UserDto> login(@Body LoginRequest request);
 
-    @GET("/review/viewReview")
+    @POST("/api/v1/hiking/sessions")
+    Call<Void> saveHikingSession(@Body HikingSessionRequestDto dto);
+
+    @GET("/review/myPage")
     Call<List<ReviewDto>> getReviewList(@Query("userId") String userId);
 
 }

@@ -1,16 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FAFAFA"
-    android:gravity="center">
+    android:layout_height="match_parent">
 
-    <TextView
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 내 위치 버튼 -->
+    <ImageButton
+        android:id="@+id/btn_my_location"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom|end"
+        android:backgroundTint="@android:color/white"
+        android:elevation="8dp"
+        android:src="@android:drawable/ic_menu_mylocation"
+        android:contentDescription="@string/my_location_button" />
+
+    <Button
+        android:id="@+id/btn_start_hiking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="StartHikingFragment"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:layout_gravity="center" />
+        android:text="등산 시작하기"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="120dp"
+        android:padding="12dp"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btn_stop_hiking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="등산 종료"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="60dp"
+        android:padding="12dp"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+
+
 </FrameLayout>

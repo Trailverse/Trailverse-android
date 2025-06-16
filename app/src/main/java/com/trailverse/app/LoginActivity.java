@@ -49,27 +49,30 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginUser(LoginRequest request) {
-        // 🔧 서버 없이 임시 로그인 통과용
-        Toast.makeText(LoginActivity.this, "디버깅용 로그인 통과 🎯", Toast.LENGTH_SHORT).show();
+//        // 🔧 서버 없이 임시 로그인 통과용
+//        Toast.makeText(LoginActivity.this, "디버깅용 로그인 통과 🎯", Toast.LENGTH_SHORT).show();
+//
+//        // SharedPreferences에 더미 userId 저장 (선택)
+//        SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+//        SharedPreferences.Editor editor = prefs.edit();
+//        editor.putString("userId", "morty");  // 또는 아무거나 테스트용
+//        editor.apply();
+//
+//        // 메인 화면으로 진입
+//        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//        startActivity(intent);
+//        finish();
 
-        // SharedPreferences에 더미 userId 저장 (선택)
-        SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("userId", "morty");  // 또는 아무거나 테스트용
-        editor.apply();
-
-        // 메인 화면으로 진입
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(intent);
-        finish();
-
-    /*
     // 원래 서버 로그인 코드 (나중에 복구)
     apiService.login(request).enqueue(new Callback<UserDto>() {
         @Override
         public void onResponse(Call<UserDto> call, Response<UserDto> response) {
             if (response.isSuccessful()) {
                 UserDto user = response.body();
+
+                SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                prefs.edit().putString("userId", user.getUserId()).apply();
+
                 Toast.makeText(LoginActivity.this, "환영합니다 🎉" + user.getNickname(), Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
@@ -86,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this, "서버 연결 오류", Toast.LENGTH_SHORT).show();
         }
     });
-    */
+
     }
 
 }

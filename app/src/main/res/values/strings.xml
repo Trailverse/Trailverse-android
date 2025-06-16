@@ -3,4 +3,5 @@
     <string name="hint_id">ID</string>
     <string name="hint_password">PASSWORD</string>
     <string name="login">로그인</string>
+    <string name="my_location_button">내 위치로 이동</string>
 </resources>
